@@ -1,0 +1,28 @@
+@import "../globals.scss";
+
+.pageTitle {
+    font-weight: normal;
+    text-align: center;
+    margin: 1rem auto 2rem;
+}
+
+.noBookmark{
+    color: $primaryColor;
+    text-align: center;
+    margin-top: 30vh;
+}
+
+.bookmarkContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 0.5rem;
+
+    .card {
+        width: auto;
+    }
+
+    @media screen and (max-width: $mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        gap: 0;
+    }
+}

@@ -1,0 +1,170 @@
+@import "../../app/variables.scss";
+
+.card {
+    &:hover {
+        box-shadow: 4px 4px 8px #000000;
+        border-color: rgb(189, 189, 189);
+        border-color: darken($primaryColor, 20%);
+        // transform: scale(1.06);
+    }
+
+    height: 16rem;
+    width: 13rem;
+    overflow: hidden;
+    margin: 0.5rem;
+    background: rgb(77, 77, 77);
+    display: inline-block;
+    border: 2px solid rgb(104, 104, 104);
+    position: relative;
+    border-radius: 0.4rem;
+    scroll-snap-align: start;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 8px #000000c2;
+
+    .image {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    .rating {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+        border-radius: 0.3rem;
+
+        .vote_count {
+            font-size: 0.6rem;
+        }
+
+        svg {
+            fill: gold;
+            margin-right: 0.25rem;
+        }
+    }
+
+    .bookmark {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 0.3rem 0.3rem 0.1rem 0.3rem;
+        border-radius: 0.3rem;
+        font-size: 1.1rem;
+
+        svg{
+            fill: $primaryColor;
+        }
+    }
+
+    &.wide {
+        width: 25rem;
+
+        .info {
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .others {
+                font-size: 1.05rem;
+            }
+
+            .description {
+                font-size: 0.8rem;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                white-space: normal;
+            }
+        }
+    }
+
+    &.normal {
+        .description {
+            display: none;
+        }
+    }
+
+    .info {
+        position: absolute;
+        padding: 0.5rem;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.95) 100%);
+        bottom: 0;
+        white-space: normal;
+        width: 100%;
+        left: 0;
+
+        .title {
+            font-size: 1.25rem;
+            font-family: ubuntu;
+        }
+
+        .others {
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+            color: rgb(223, 223, 223);
+        }
+
+        .description {
+            font-size: 0.8rem;
+            color: rgb(189, 189, 189);
+            margin-top: 0.1rem;
+            line-height: 1.1;
+        }
+    }
+
+    .others {
+        display: flex;
+        // display: none;
+    }
+
+    @media screen and (max-width: $mobile) {
+        & {
+            width: 9rem;
+            height: 13.5rem;
+        }
+
+        .rating {
+            font-size: 0.7rem;
+        }
+
+        .bookmark {
+            font-size: 0.9rem;
+        }
+
+        &.wide {
+            width: 16rem;
+
+            .info {
+                .title {
+                    font-size: 1.2rem;
+                }
+
+                .others {
+                    font-size: 0.8rem;
+                }
+
+                .description {
+                    font-size: 0.7rem;
+                    -webkit-line-clamp: 4;
+                }
+            }
+        }
+
+        .info {
+            .title {
+                font-size: 1.15rem;
+            }
+
+            .others {
+                font-size: 0.65rem;
+            }
+        }
+    }
+}

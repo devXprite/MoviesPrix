@@ -1,57 +1,70 @@
+// "use client"
+
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './page.module.scss'
+// import Carousel from '../components/Carousel'
+import Card from '../components/Card';
+import Link from 'next/link';
 
-export default function Home() {
+const categoryArray = [
+  {
+    title: 'Treanding',
+    apiUrl: 'https://api.themoviedb.org/3/trending/movie/week?api_key=6217472bdd628b9268b65c128bf3cc6b'
+  },
+  {
+    title: 'Popular',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1'
+  },
+  {
+    title: 'Top Rated',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&sort_by=vote_average.desc&include_adult=true&include_video=false&page=1'
+  },
+  {
+    title: 'Action',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=28'
+  },
+  {
+    title: 'Comedy',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=35'
+  },
+  {
+    title: 'Adultery',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=10749'
+  },
+  {
+    title: 'Horror',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=27'
+  },
+  {
+    title: 'Documentary',
+    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=99'
+  }
+]
+
+const getCardsByCategory = async (api,cardSize) => {
+  const res = await fetch(api)
+  const data = await res.json()
+
+  const cardComponents = data.results.slice(0, 12).map((movie,i) =>  <Card key={i} className={cardSize} {...movie}  />)
+
+  return cardComponents;
+}
+
+export default async function Home() {
+
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+    <div>
+      {
+        await Promise.all(categoryArray.map(async (category) => (
+            <div key={category.title}>
+              <h2 className='categoryTitle'>{category.title}</h2>
+              <div className='cardContainer'>
+                {await getCardsByCategory(category.apiUrl, (category.title === 'Treanding' ? 'wide' : 'normal'))}
+              </div>
+            </div>
+          )
+        ))
+      }
     </div>
   )
 }
