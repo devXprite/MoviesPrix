@@ -1,8 +1,7 @@
 // "use client"
 
 import Image from 'next/image'
-import styles from './page.module.scss'
-// import Carousel from '../components/Carousel'
+import styles from './page.scss'
 import Card from '../components/Card';
 import Link from 'next/link';
 

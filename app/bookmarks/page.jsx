@@ -18,7 +18,7 @@ export default function Bookmarks() {
     return (
         <div>
             <h2 className='pageTitle'>Bookmarks</h2>
-            <div className="bookmarkContainer">
+            <div className="gridCardContainer">
                 {
                     localStorageData 
                     ? Object.keys(localStorageData).filter(key => !isNaN(key)).length == 0 

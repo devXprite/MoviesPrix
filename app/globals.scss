@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Ubuntu:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Rubik:wght@300;400&family=Ubuntu:wght@300;400&display=swap');
 @import "./variables.scss";
 
 *,
@@ -15,7 +15,8 @@ body {
   display: grid;
   min-height: 100vh;
   grid-template-columns: 5rem auto;
-  font-family: "Poppins", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,'Rubik', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
 main {
@@ -34,12 +35,29 @@ a {
   width: 100%;
   overflow: scroll auto;
   margin-bottom: 1.25rem;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
 }
 
-.categoryTitle {
-  font-weight: normal;
+.gridCardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11.5rem, 1fr));
+  gap: 0.5rem;
+
+  .card {
+      width: auto;
+      height: 15rem;
+  }
+
+  @media screen and (max-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+      gap: 0;
+
+      .card{
+        height: 12rem;
+      }
+  }
 }
+
 
 .pageTitle{
   font-weight: normal;

@@ -1,0 +1,26 @@
+@import '../../app/variables.scss';
+
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem auto 2rem;
+
+    .paginationButton{
+        background: $primaryColor;
+        padding: 0.3rem 0.6rem;
+        font-size: 1rem;
+        border-radius: 0.35rem;
+        border: 2px solid #222222;
+        box-shadow: 2px 2px 6px rgb(0 0 0 / 76%);
+        cursor: pointer;
+
+        &:hover{
+            background: darken($primaryColor,10%)
+        }
+
+        &:disabled{
+            opacity: 0.5;
+            color: black;
+        }
+    }
+}

@@ -45,9 +45,14 @@ export default function Card(prop) {
 
             <Link href={`/movies/${prop.id}`}>
             <Image className="image"
-                src={`https://image.tmdb.org/t/p/w300${prop.poster_path}`}
+                src={
+                    (prop.className === 'wide' && prop.backdrop_path)
+                    ? `https://image.tmdb.org/t/p/original${prop.backdrop_path}`
+                    : `https://image.tmdb.org/t/p/w300${prop.poster_path}`
+
+                }
                 alt={prop.title}
-                width={250}
+                width={prop.className === 'wide' ? 450 : 250}
                 height={350}
             />
             <div className="info">

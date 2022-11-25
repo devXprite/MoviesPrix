@@ -61,7 +61,9 @@
     }
 
     &.wide {
-        width: 25rem;
+        width: 28rem;
+        height: 18rem;
+        scroll-snap-align: center;
 
         .info {
             .title {
@@ -77,18 +79,16 @@
                 text-overflow: ellipsis;
                 overflow: hidden;
                 display: -webkit-box !important;
-                -webkit-line-clamp: 5;
+                -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
                 white-space: normal;
             }
         }
     }
 
-    &.normal {
         .description {
             display: none;
         }
-    }
 
     .info {
         position: absolute;
@@ -121,13 +121,14 @@
 
     .others {
         display: flex;
-        // display: none;
     }
 
     @media screen and (max-width: $mobile) {
-        & {
             width: 9rem;
-            height: 13.5rem;
+            height: 12.5rem;
+
+        &:hover{
+            border-color: rgb(189, 189, 189);
         }
 
         .rating {
@@ -139,11 +140,12 @@
         }
 
         &.wide {
-            width: 16rem;
-
+            width: 18rem;
+            height: 13rem;
+            
             .info {
                 .title {
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                 }
 
                 .others {
