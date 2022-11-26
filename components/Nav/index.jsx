@@ -13,32 +13,36 @@ const routesArray = [
     {
         title: 'Home',
         path: '/',
+        pathRegex: /^\/$/,
         icon: <MdHome/>
-    },
-    {
-        title: 'Search',
-        path: '/search',
-        icon: <MdSearch/>
     },
     {
         title: 'Movies',
         path: '/movies',
+        pathRegex: /^\/movies/,
         icon: <MdMovie/>
+    },
+    {
+        title: 'Search',
+        path: '/search',
+        pathRegex: /^\/search/,
+        icon: <MdSearch/>
     },
     {
         title: 'Series',
         path: '/series',
+        pathRegex: /^\/series/,
         icon: <MdTv/>
     },
     {
         title: 'Bookmarks',
         path: '/bookmarks',
+        pathRegex: /^\/bookmarks/,
         icon: <MdBookmarks/>
     }
 ]
 
 export default function Nav() {
-
     return (
         <nav className='NavBar'>
             <div className="logo">
@@ -50,7 +54,7 @@ export default function Nav() {
                         <Link 
                             key={route.title}
                             href={route.path}
-                            className={usePathname() === route.path ? 'active' : ''}
+                            className={route.pathRegex.test(usePathname()) ? 'active' : ''}
                         >
                             {route.icon}
                         </Link>                            

@@ -19,7 +19,7 @@
     border-radius: 0.4rem;
     scroll-snap-align: start;
     transition: all 0.3s ease-in-out;
-    box-shadow: 3px 3px 8px #000000c2;
+    box-shadow: 3px 3px 6px hsla(0, 0%, 0%, 0.7);
 
     .image {
         height: 100%;
@@ -126,6 +126,10 @@
     @media screen and (max-width: $mobile) {
         width: 9rem;
         height: 12.5rem;
+
+        &:hover{
+            transform: none;
+        }
 
         .rating {
             font-size: 0.7rem;

@@ -1,12 +1,13 @@
 @import "../../app/variables.scss";
 
 nav {
-    background-color: lighten($backgroundColor, 10%);
+    background-color: lighten($backgroundColor, 5%);
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: #000 2px 2px 4px;
+    box-shadow: rgb(0 0 0 / 70%) 2px -2px 4px;
+    z-index: 2;
 
     .logo {
         font-size: 2rem;
@@ -39,11 +40,9 @@ nav {
     }
 
     @media screen and (max-width: $mobile) {
-        & {
             flex-direction: row;
-            margin: 0.5rem;
-            border-radius: 0.5rem;
-        }
+            // margin: 0.5rem;
+            // border-radius: 0.5rem;
 
         .logo {
             display: none;

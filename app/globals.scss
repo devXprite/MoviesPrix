@@ -9,11 +9,14 @@
   box-sizing: border-box;
 }
 
+html,body{
+  height:100%;
+}
+
 body {
   background-color: $backgroundColor;
   color: $textColor;
   display: grid;
-  min-height: 100vh;
   grid-template-columns: 5rem auto;
   font-family: system-ui, -apple-system, BlinkMacSystemFont,'Rubik', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -21,7 +24,6 @@ body {
 
 main {
   padding: 1rem;
-  height: 100vh;
   overflow-y: scroll;
 }
 
@@ -66,7 +68,15 @@ a {
 @media screen and (max-width: $mobile) {
   body {
     grid-template-columns: none;
-    grid-template-rows: 4rem auto;
+    grid-template-rows: auto 3rem;
+  }
+
+  main{
+    order: 1;
+  }
+
+  nav{
+    order: 2;
   }
 
   .cardContainer {
