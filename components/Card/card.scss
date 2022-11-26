@@ -5,7 +5,7 @@
         box-shadow: 4px 4px 8px #000000;
         border-color: rgb(189, 189, 189);
         border-color: darken($primaryColor, 20%);
-        // transform: scale(1.06);
+        transform: scale(1.05);
     }
 
     height: 16rem;
@@ -14,7 +14,7 @@
     margin: 0.5rem;
     background: rgb(77, 77, 77);
     display: inline-block;
-    border: 2px solid rgb(104, 104, 104);
+    border: 1px solid rgb(104, 104, 104);
     position: relative;
     border-radius: 0.4rem;
     scroll-snap-align: start;
@@ -55,7 +55,7 @@
         border-radius: 0.3rem;
         font-size: 1.1rem;
 
-        svg{
+        svg {
             fill: $primaryColor;
         }
     }
@@ -86,9 +86,9 @@
         }
     }
 
-        .description {
-            display: none;
-        }
+    .description {
+        display: none;
+    }
 
     .info {
         position: absolute;
@@ -124,12 +124,8 @@
     }
 
     @media screen and (max-width: $mobile) {
-            width: 9rem;
-            height: 12.5rem;
-
-        &:hover{
-            border-color: rgb(189, 189, 189);
-        }
+        width: 9rem;
+        height: 12.5rem;
 
         .rating {
             font-size: 0.7rem;
@@ -142,7 +138,7 @@
         &.wide {
             width: 18rem;
             height: 13rem;
-            
+
             .info {
                 .title {
                     font-size: 1.1rem;

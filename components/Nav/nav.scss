@@ -17,9 +17,10 @@ nav {
         font-size: 1.8rem;
         margin-top: 2rem;
         height: 45%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         filter: drop-shadow(2px 2px 2px black);
         transition: all 0.3s ease-in-out;
@@ -45,13 +46,11 @@ nav {
         }
 
         .logo {
-            font-size: 1.8rem;
-            flex: 3;
+            display: none;
         }
 
         .linksContainer {
             font-size: 1.4rem;
-            flex: 5;
             flex-direction: row;
             margin-top: 0;
         }

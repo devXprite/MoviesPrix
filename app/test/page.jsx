@@ -1,5 +1,11 @@
-import Loader from "../../components/Loader";
+// import Loader from "../../components/Loader";
 
-export default function test(){
-    return <Loader/>
+export default function page(prop){
+    return (
+        <pre>
+            {
+                JSON.stringify(prop)
+            }
+        </pre>
+    )
 }
