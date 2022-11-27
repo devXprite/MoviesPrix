@@ -7,7 +7,12 @@ import Card from "../../components/Card";
 import styles from "./page.scss";
 
 export default function page() {
-    const [query, setQuery] = useState("");
+
+    // create a state that will hold media type (movie or tv)
+    const [mediaType, setMediaType] = useState("movie");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [includeAdult, setIncludeAdult] = useState(true);
+
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -17,14 +22,14 @@ export default function page() {
 
         (async () => {
             setLoading(true);
-            const res = await fetch("/api/search?q=" + query, { signal });
+            const res = await fetch(`/api/search?q=${searchQuery}&mediaType=${mediaType}&includeAdult=${includeAdult}`, { signal });
             const data = await res.json();
             setResults(data.results);
             setLoading(false);
         })();
 
         return () => controller.abort();
-    }, [query]);
+    }, [searchQuery, mediaType, includeAdult]);
 
 
     return (
@@ -32,24 +37,21 @@ export default function page() {
             <h2 className="pageTitle">Search</h2>
 
             <div className="search">
-                <input type="text" value={query} onChange={e => setQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..."/>
-                <select className="input__filter" name="adult" id="adult">
-                    <option value="both">Both</option>
-                    <option value="true">Adult</option>
-                    <option value="false">Non-Adult</option>
+                <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..."/>
+                <select value={mediaType} onChange={e => setMediaType(e.target.value)} className="input__filter">
+                    <option value="movie">Movie</option>
+                    <option value="tv">TV Show</option>
                 </select>
-                <select className="input__filter" name="year" id="year">
-                    <option value="both">All Years</option>
-                    {[...Array(50).keys()].map((i) => {
-                            return <option key={i} value={i + 1970}>{i + 1970}</option>
-                    })}
+                <select value={includeAdult} onChange={e => setIncludeAdult(e.target.value)} className="input__filter">
+                    <option value="true">Include Adult</option>
+                    <option value="false">Exclude Adult</option>
                 </select>
             </div>
-            {query && <p className="query">search results fror <b>{query}</b></p>}
+            {searchQuery && <p className="query">search results fror <b>{searchQuery}</b></p>}
 
             {results
                 ? (<div className="gridCardContainer">
-                    {results.map(result => (<Card key={result.id} {...result} />))}
+                    {results.map(result => (<Card key={result.id} type={mediaType} {...result} />))}
                 </div>)
                 : <p className="no__result">no results</p>
             }

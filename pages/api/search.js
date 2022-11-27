@@ -3,8 +3,8 @@
 // this is a server side api route
 
 export default async function handler(req, res) {
-    const { q } = req.query;
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${q}`;
+    const { q, mediaType, includeAdult} = req.query;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${q}&media_type=${mediaType}&include_adult=${includeAdult}`;
     const response = await fetch(url);
     const data = await response.json();
 

@@ -2,10 +2,7 @@
 
 .expendedCard {
     display: flex;
-    background: rgb(28, 28, 28);
-    background: linear-gradient(180deg, rgb(30 30 30 / 75%) 0%, rgb(30 30 30 / 95%) 100%);
-    width: 85%;
-    margin: auto;
+   width: 100%;
     overflow: hidden;
     box-shadow: 1px 1px 8px #00000081;
     border-radius: 0.25rem;
@@ -13,13 +10,20 @@
 
     .backdrop {
         position: absolute;
-        z-index: -1;
         width: 100%;
         height: 100%;
+        opacity: 0.2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .poster {
         flex: 4;
+        z-index: 1;
         padding: 2rem;
 
         img {
@@ -33,6 +37,7 @@
 
     .content {
         flex: 7;
+        z-index: 1;
         padding: 2rem;
 
         .title {
@@ -134,7 +139,6 @@
     }
 
     @media screen and (max-width: $mobile) {
-        width: 100%;
         flex-direction: column;
 
         .backdrop {

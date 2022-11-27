@@ -5,7 +5,6 @@ export default async function page({ searchParams }) {
 
     const page = parseInt(searchParams.page) || 1;
 
-    // fetch movies from tmdb api
     const response = await fetch(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.TMDB_API_KEY}&page=${page}`);
 
     const data = await response.json();
@@ -20,7 +19,7 @@ export default async function page({ searchParams }) {
                 {cardComponents}
             </div>
 
-            <Pagination pathname='/movies' currentPage={page} totalPage={data.total_pages} />
+            <Pagination pathname='/tv' currentPage={page} totalPage={data.total_pages} />
 
         </>
     )

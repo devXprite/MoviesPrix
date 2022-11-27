@@ -18,7 +18,7 @@ export default function ExpendedCard(props) {
                 <p className="tagline">{props.tagline}</p>
                 <div className="rating">
                     <p className='stars'> <BsStarFill /> {props.vote_average}</p>
-                    <p className="runtime"> <FaClock /> {props.runtime} mins</p>
+                    {/* <p className="runtime"> <FaClock /> {props.runtime} mins</p> */}
                 </div>
                 <h2 className="heading">Genres</h2>
                 <p className="genres">{props.genres.map((genre, i) => <span key={i}>{genre.name}</span>)}</p>

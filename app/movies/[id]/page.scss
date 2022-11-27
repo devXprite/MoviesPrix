@@ -1,0 +1,27 @@
+@import '../../globals.scss';
+
+.details__page {
+    .section {
+        width: 85%;
+        margin: 1.25rem auto;
+        background: rgb(28, 28, 28);
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.75);
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        & > .title {
+            font-weight: normal;
+            padding: 0.5rem 0 0 1rem;
+        }
+
+        .cardContainer{
+            margin: 0.5rem 1rem;
+        }
+    }
+
+    @media screen and (max-width:$mobile) {
+        .section {
+            width: 100%;
+        }
+    }
+}
