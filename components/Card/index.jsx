@@ -43,7 +43,7 @@ export default function Card(prop) {
                 {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
             </p>
 
-            <Link href={`/movies/${prop.id}`}>
+            <Link href={`/${prop.type === 'tv' ? 'tv' : 'movies'}/${prop.id}`}>
             <Image className="image"
                 src={
                     (prop.className === 'wide' && prop.backdrop_path)
@@ -51,12 +51,12 @@ export default function Card(prop) {
                     : `https://image.tmdb.org/t/p/w300${prop.poster_path}`
 
                 }
-                alt={prop.title}
+                alt={prop.title || prop.name}
                 width={prop.className === 'wide' ? 450 : 250}
                 height={350}
             />
             <div className="info">
-                <h2 className="title">{prop.title}</h2>
+                <h2 className="title">{prop.title || prop.name}</h2>
                 <p className="others">
                     {moment(prop.release_date).format('MMMM YYYY')} • {ISO6391.getName(prop.original_language)} {prop.adult ? ' • 18+' : ''}
                 </p>

@@ -3,7 +3,7 @@
     "short_name": "Movie APP",
     "theme_color": "#21daa2",
     "background_color": "#1c1c1c",
-    "display": "fullscreen",
+    "display": "standalone",
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/"

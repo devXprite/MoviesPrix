@@ -1,0 +1,77 @@
+@import "../../app/variables.scss";
+
+.cast__card {
+    width: 85%;
+    background: rgb(28, 28, 28);
+    box-shadow: 1px 1px 8px #00000081;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    .container {
+        white-space: nowrap;
+        width: 100%;
+        overflow: scroll auto;
+        margin-bottom: 1.25rem;
+        scroll-snap-type: x mandatory;
+
+        .card {
+            height: 16rem;
+            width: 12rem;
+            overflow: hidden;
+            margin: 0.5rem;
+            background: #3d3d3d;
+            display: inline-block;
+            border: 1px solid $primaryColor;
+            position: relative;
+            border-radius: 0.4rem;
+            scroll-snap-align: start;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 4px rgb(0 0 0 / 85%);
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .info {
+                position: absolute;
+                padding: 0.5rem;
+                background: #000;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.8) 25%, rgba(0, 0, 0, 0.95));
+                bottom: 0;
+                white-space: normal;
+                width: 100%;
+                left: 0;
+
+                .name {
+                    font-size: 1.2rem;
+                }
+
+                .character {
+                    font-size: 1rem;
+                    color: #c4c4c4;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        width: 100%;
+
+        .container {
+            .card {
+                width: 9rem;
+                height: 13rem;
+
+                .info {
+                    .name {
+                        font-size: 1rem;
+                    }
+                    .character {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}

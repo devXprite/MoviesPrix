@@ -9,9 +9,9 @@
     }
 
     height: 16rem;
-    width: 13rem;
+    width: 12rem;
     overflow: hidden;
-    margin: 0.5rem;
+    margin: 0.7rem;
     background: rgb(77, 77, 77);
     display: inline-block;
     border: 1px solid rgb(104, 104, 104);
@@ -67,7 +67,7 @@
 
         .info {
             .title {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .others {
@@ -101,7 +101,7 @@
         left: 0;
 
         .title {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-family: ubuntu;
         }
 
@@ -124,8 +124,9 @@
     }
 
     @media screen and (max-width: $mobile) {
-        width: 9rem;
+        width: 8.5rem;
         height: 12.5rem;
+        margin: 0.5rem;
 
         &:hover{
             transform: none;
@@ -145,7 +146,7 @@
 
             .info {
                 .title {
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                 }
 
                 .others {
@@ -161,7 +162,7 @@
 
         .info {
             .title {
-                font-size: 1.15rem;
+                font-size: 0.9rem;
             }
 
             .others {

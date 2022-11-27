@@ -13,6 +13,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.txt',
+        destination: '/api/sitemap',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

@@ -3,7 +3,10 @@
 
 import styles from './nav.scss'
 import {BiCameraMovie} from 'react-icons/bi'
+
 import {MdMovie,MdBookmarks, MdTv, MdSearch,MdHome} from 'react-icons/md'
+// import {BiBookmark,BiSearch,BiHome} from 'react-icons/bi'
+
 
 import Link from 'next/link'
 
@@ -29,9 +32,9 @@ const routesArray = [
         icon: <MdSearch/>
     },
     {
-        title: 'Series',
-        path: '/series',
-        pathRegex: /^\/series/,
+        title: 'TV Series',
+        path: '/tv',
+        pathRegex: /^\/tv/,
         icon: <MdTv/>
     },
     {

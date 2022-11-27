@@ -14,7 +14,7 @@ export default function ExpendedCard(props) {
                 <img src={`https://image.tmdb.org/t/p/w400/${props.poster_path}`} alt={props.title} />
             </div>
             <div className='content'>
-                <h1 className='title'>{props.title}</h1>
+                <h1 className='title'>{props.title || props.name}</h1>
                 <p className="tagline">{props.tagline}</p>
                 <div className="rating">
                     <p className='stars'> <BsStarFill /> {props.vote_average}</p>
@@ -30,11 +30,11 @@ export default function ExpendedCard(props) {
                 <div className="stats">
                     <div className="box">
                         <p className="key">Budget</p>
-                        <p className="value">$ {props.budget}</p>
+                        <p className="value">$ {props.budget || '--'}</p>
                     </div>
                     <div className="box">
                         <p className="key">Revenue</p>
-                        <p className="value">$ {props.revenue}</p>
+                        <p className="value">$ {props.revenue || '--'}</p>
                     </div>
                     <div className="box">
                         <p className="key">Status</p>
