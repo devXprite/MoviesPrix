@@ -1,0 +1,43 @@
+@import './globals.scss';
+
+.error__page {
+    margin-top: 35vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        color: $primaryColor;
+        font-size: 6rem;
+        margin-right: 2rem;
+    }
+
+    .text {
+        h1 {
+            font-size: 2.3rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: rgb(196, 196, 196);
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        margin-top: 30vh;
+
+        svg {
+            font-size: 4rem;
+            margin: 1rem 0;
+        }
+
+        .text {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
