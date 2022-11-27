@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       ]
 
 
-      for (let i = 1; i <= 25; i++) {
+      for (let i = 1; i <= 500; i++) {
         const movies = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${i}`)
         const moviesJson = await movies.json()
         moviesJson.results.forEach(movie => {
