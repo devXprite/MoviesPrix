@@ -1,6 +1,6 @@
 import styles from '../../movies/[id]/page.scss'
 import Card from "../../../components/Card"
-import PeopleCard from "../../../components/PeopleCard";
+import PersonCard from "../../../components/PersonCard";
 import ExpendedCard from "../../../components/ExpandedCard";
 
 export default async function page({ params }) {
@@ -24,7 +24,7 @@ export default async function page({ params }) {
             <div className="section">
                 <h2 className="title">Cast</h2>
                 <div className="cardContainer">
-                    {castData.map(person => <PeopleCard key={person.id} {...person} /> )}
+                    {castData.map(person => <PersonCard key={person.id} {...person} /> )}
                 </div>
             </div>
             <div className="section">

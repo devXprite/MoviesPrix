@@ -1,8 +1,14 @@
-.loader{
-    margin-top: 30vh;
+@import '../../app/variables.scss';
 
-    &> span{
+.loader {
+    margin-top: 35vh;
+
+    &>span {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    @media screen and (max-width: $mobile) {
+        margin-top: 25vh;
     }
 }

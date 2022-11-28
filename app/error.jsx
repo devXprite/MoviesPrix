@@ -3,7 +3,7 @@
 import { MdSentimentVeryDissatisfied } from 'react-icons/md';
 import './error.scss';
 
-export default function page(prop) {
+export default function page({statusCode}) {
 
     return (
         <div className='error__page'>

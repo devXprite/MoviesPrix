@@ -1,18 +1,18 @@
 @import "../../app/variables.scss";
 
-.card {
-    height: 16rem;
-    width: 12rem;
-    overflow: hidden;
-    margin: 0.5rem;
-    background: #3d3d3d;
-    display: inline-block;
-    border: 1px solid $primaryColor;
-    position: relative;
-    border-radius: 0.4rem;
-    scroll-snap-align: start;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 85%);
+.card__person {
+    // height: 15rem;
+    // width: 11rem;
+    // overflow: hidden;
+    // margin: 0.5rem;
+    // background: #3d3d3d;
+    // display: inline-block;
+    // border: 1px solid $primaryColor;
+    // position: relative;
+    // border-radius: 0.4rem;
+    // scroll-snap-align: start;
+    // transition: all 0.3s ease-in-out;
+    // box-shadow: 2px 2px 4px rgb(0 0 0 / 85%);
 
     img {
         width: 100%;
@@ -40,9 +40,6 @@
     }
 
     @media screen and (max-width: $mobile) {
-        width: 9rem;
-        height: 13rem;
-
         .info {
             .name {
                 font-size: 1rem;
