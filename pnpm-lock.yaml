@@ -6,6 +6,7 @@ specifiers:
   iso-639-1: ^2.1.15
   moment: ^2.29.4
   next: 13.0.5
+  next-seo: ^5.14.1
   react: 18.2.0
   react-dom: 18.2.0
   react-icons: ^4.6.0
@@ -19,6 +20,7 @@ dependencies:
   iso-639-1: 2.1.15
   moment: 2.29.4
   next: 13.0.5_m5sxuueb27gk6ddc5gums6vtgq
+  next-seo: 5.14.1_7iuvftg57tblwyxclfkwku5xo4
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
@@ -1461,6 +1463,18 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-seo/5.14.1_7iuvftg57tblwyxclfkwku5xo4:
+    resolution: {integrity: sha512-NiJeQbxYP3z+EMp52q8k3Q+OfX2+Yv2WehERDj98r2wjXxL+woKpRBdsSVYolTD0Hm8IWs42SzaISE93RoQdOw==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.0.5_m5sxuueb27gk6ddc5gums6vtgq
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/13.0.5_m5sxuueb27gk6ddc5gums6vtgq:

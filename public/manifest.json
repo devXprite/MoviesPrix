@@ -1,6 +1,6 @@
 {
-    "name": "Next Movie App",
-    "short_name": "Movie APP",
+    "name": "MoviesPrix",
+    "short_name": "MoviesPrix",
     "theme_color": "#21daa2",
     "background_color": "#1c1c1c",
     "display": "standalone",
