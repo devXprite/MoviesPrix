@@ -47,7 +47,7 @@ export default function page() {
                     <option value="false">Exclude Adult</option>
                 </select>
             </div>
-            {searchQuery && <p className="query">search results fror <b>{searchQuery}</b></p>}
+            {searchQuery && <p className="query">search results for <b>{searchQuery}</b> in <b>{mediaType}</b></p>}
 
             {results
                 ? (<div className="gridCardContainer">
