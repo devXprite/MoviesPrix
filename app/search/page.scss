@@ -49,6 +49,10 @@
         font-size: 1.2rem;
     }
 
+    .loader{
+        margin: 4rem auto ;
+    }
+
     @media screen and (max-width: 768px) {
         .search {
             grid-template-columns: repeat(2, 1fr);

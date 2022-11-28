@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Card from "../../components/Card";
 import styles from "./page.scss";
+import {ClipLoader} from 'react-spinners';
 
 export default function page() {
 
@@ -37,7 +38,7 @@ export default function page() {
             <h2 className="pageTitle">Search</h2>
 
             <div className="search">
-                <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..."/>
+                <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..." />
                 <select value={mediaType} onChange={e => setMediaType(e.target.value)} className="input__filter">
                     <option value="movie">Movie</option>
                     <option value="tv">TV Show</option>
@@ -49,11 +50,20 @@ export default function page() {
             </div>
             {searchQuery && <p className="query">search results for <b>{searchQuery}</b> in <b>{mediaType}</b></p>}
 
-            {results
-                ? (<div className="gridCardContainer">
-                    {results.map(result => (<Card key={result.id} type={mediaType} {...result} />))}
-                </div>)
-                : <p className="no__result">no results</p>
+            {
+                loading
+                    ? (
+                        <div className="loader">
+                            <ClipLoader />
+                        </div>
+                    )
+                    : (
+                        results
+                            ? (<div className="gridCardContainer">
+                                {results.map(result => (<Card key={result.id} type={mediaType} {...result} />))}
+                            </div>)
+                            : <p className="no__result">no results</p>
+                    )
             }
         </div>
     )

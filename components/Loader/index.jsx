@@ -8,7 +8,7 @@ import './loader.scss'
 export default function Loader() {
     return (
         <div className="loader">
-            <ClipLoader color="#21daa2" loading />
+            <ClipLoader loading />
         </div>
     )
 }
