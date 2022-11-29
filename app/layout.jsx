@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
           titleTemplate="%s | MoviesPrix"
         />
       </head>
+      <meta name="google-site-verification" content="koBxrTJwnDsFGPdjUesKqkWAgmhsZyvWWlDkwv4cOpw" />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-Y94T96FRD7"
         strategy="afterInteractive"
