@@ -1,5 +1,6 @@
 import './globals.scss'
 import { NextSeo } from 'next-seo';
+import Script from 'next/script'
 import Nav from '../components/Nav'
 
 export default function RootLayout({ children }) {
@@ -16,6 +17,22 @@ export default function RootLayout({ children }) {
           titleTemplate="%s | MoviesPrix"
         />
       </head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-Y94T96FRD7"
+        strategy="afterInteractive"
+      />
+      <Script
+        strategy="afterInteractive"
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y94T96FRD7');
+          `,
+        }}
+      />
       <body>
         < Nav />
         <main>
