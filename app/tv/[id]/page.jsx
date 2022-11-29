@@ -30,7 +30,7 @@ export default async function page({ params }) {
             <div className="section">
                 <h2 className="title">Similar TV Shows</h2>
                 <div className="cardContainer">
-                    {similarData.map(tv => <Card key={tv.id} {...tv} /> )}
+                    {similarData.map(tv => <Card key={tv.id} type='tv' {...tv} /> )}
                 </div>
             </div>
         </div>
