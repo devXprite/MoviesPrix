@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     res.setHeader('Content-Type', 'text/plain')
       res.setHeader('Cache-control', 'stale-while-revalidate, s-maxage=3600')
       
-      const websiteUrl = 'https://www.example.com';
+      const websiteUrl = 'https://moviesprix.vercel.app';
 
       const sitemapUrlsArray = [
         '/',
