@@ -58,7 +58,7 @@ export default function ExpendedCard(props) {
                     </div>
                     <div className='box'>
                         <p className="key">Country</p>
-                        <p className="value">{props.production_countries.map((country, i) => <span key={i}>{country.name}</span>)}</p>
+                        <p className="value">{props.production_countries.splice(0,1).map((country, i) => <span key={i}>{country.name}</span>)}</p>
                     </div>
                 </div> 
             </div>
