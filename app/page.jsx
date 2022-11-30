@@ -8,35 +8,39 @@ import Link from 'next/link';
 const categoryArray = [
   {
     title: 'Treanding',
-    apiUrl: 'https://api.themoviedb.org/3/trending/movie/week?api_key=6217472bdd628b9268b65c128bf3cc6b'
+    apiUrl: `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`
   },
   {
     title: 'Popular',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1'
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1`
   },
   {
     title: 'Top Rated',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&sort_by=vote_average.desc&include_adult=true&include_video=false&page=1'
+    apiUrl: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`
   },
   {
     title: 'Action',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=28'
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=28`
   },
   {
     title: 'Comedy',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=35'
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=35`
   },
   {
-    title: 'Adultery',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=10749'
+    title: 'Best from Bollywood',
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1&with_original_language=hi`
   },
   {
     title: 'Horror',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=27'
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=27`
   },
   {
-    title: 'Documentary',
-    apiUrl: 'https://api.themoviedb.org/3/discover/movie?api_key=6217472bdd628b9268b65c128bf3cc6b&language=en-US&include_adult=true&include_video=false&page=1&with_genres=99'
+    title: 'Best from 2010',
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&primary_release_year=2010&sort_by=vote_count.desc`
+  },
+  {
+    title: 'Best by Tom Cruise',
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&page=1&with_cast=500&with_people=500&sort_by=vote_count.desc`
   }
 ]
 
