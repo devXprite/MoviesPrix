@@ -2,6 +2,7 @@ import './globals.scss'
 import { NextSeo } from 'next-seo';
 import Script from 'next/script'
 import Nav from '../components/Nav'
+import ScrollTopBtn from '../components/ScrollTopBtn'
 
 export default function RootLayout({ children }) {
   return (
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
         < Nav />
         <main>
           {children}
+          <ScrollTopBtn />
         </main>
       </body>
     </html>

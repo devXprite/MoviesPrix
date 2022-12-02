@@ -1,0 +1,25 @@
+@import '../../app/variables.scss';
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 999;
+    border-radius: 50%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    display: grid;
+    place-items: center;
+
+    &>svg {
+        fill: $primaryColor;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: black;
+        border-radius: 50%;
+    }
+
+    @media screen and (max-width: $mobile) {
+        bottom: 4rem;
+        right: 2rem;
+    }
+}
