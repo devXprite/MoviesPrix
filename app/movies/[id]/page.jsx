@@ -12,8 +12,6 @@ export default async function page({ params }) {
     const resCast = await fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.TMDB_API_KEY}&language=en-US`);
     const castData = (await resCast.json()).cast;
 
-    console.log(castData);
-
     // fetch similar movies 
     const resSimilar = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=1`);
     const similarData = (await resSimilar.json()).results;

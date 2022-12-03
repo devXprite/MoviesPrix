@@ -142,8 +142,10 @@
         }
 
         &.wide {
-            width: 18rem;
-            height: 13rem;
+            width: 95%;
+            height: auto;
+            min-height: 11rem;
+            aspect-ratio: 16/10;
 
             .info {
                 .title {
