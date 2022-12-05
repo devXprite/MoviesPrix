@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fix" : "next lint --fix"
   },
   "dependencies": {
-    "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "iso-639-1": "^2.1.15",
     "moment": "^2.29.4",
@@ -22,6 +22,12 @@
     "react-spinners": "^0.13.6"
   },
   "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "sass": "^1.56.1"
   }
 }
