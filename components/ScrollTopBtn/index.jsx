@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -18,19 +20,22 @@ export default function ScrollTopBtn() {
     };
 
     window.addEventListener('scroll', handleScrollBtnVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', handleScrollBtnVisibility);
-    };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <>
+    <div>
       {isVisible && (
-        <div className="scroll-to-top" onClick={scrollToTop}>
+        <div className="scroll-to-top" onClick={scrollToTop} role="button" tabIndex={0}>
           <BsFillArrowUpCircleFill />
         </div>
       )}
-    </>
+    </div>
   );
 }
