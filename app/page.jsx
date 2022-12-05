@@ -1,4 +1,5 @@
 import Card from '../components/Card';
+import styles from './page.scss';
 
 const categoryArray = [
   {
