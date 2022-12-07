@@ -1,8 +1,8 @@
 import moment from 'moment';
 import ISO6391 from 'iso-639-1';
-import { BsStarFill } from 'react-icons/bs';
 import Image from 'next/image';
 import styles from './expendedCard.scss';
+import StarRating from '../StarRating';
 
 export default function ExpendedCard(props) {
   return (
@@ -30,12 +30,7 @@ export default function ExpendedCard(props) {
         <h1 className="title">{props.title || props.name}</h1>
         <p className="tagline">{props.tagline}</p>
         <div className="rating">
-          <p className="stars">
-            {' '}
-            <BsStarFill />
-            {' '}
-            {props.vote_average}
-          </p>
+          <StarRating rating={props.vote_average} />
         </div>
         <h2 className="heading">Genres</h2>
         <p className="genres">{props.genres.map((genre, i) => <span key={i}>{genre.name}</span>)}</p>

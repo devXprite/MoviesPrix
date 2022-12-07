@@ -8,7 +8,7 @@ const categoryArray = [
   },
   {
     title: 'Popular',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
   },
   {
     title: 'Top Rated',
@@ -17,19 +17,19 @@ const categoryArray = [
 
   {
     title: 'Best by Tom Cruise',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&page=1&with_cast=500&with_people=500&sort_by=vote_count.desc`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&page=1&with_cast=500&with_people=500&sort_by=vote_count.desc`,
   },
   {
     title: 'Action',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=28`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=28`,
   },
   {
     title: 'Best by Shah Rukh Khan',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&page=1&with_cast=35742&with_people=35742&sort_by=vote_count.desc`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&page=1&with_cast=35742&with_people=35742&sort_by=vote_count.desc`,
   },
   {
     title: 'Comedy',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=35`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=35`,
   },
   {
     title: 'Best from Bollywood',
@@ -37,23 +37,23 @@ const categoryArray = [
   },
   {
     title: 'Horror',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=27`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=27`,
   },
   {
     title: 'Best from 2010',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&primary_release_year=2010&sort_by=vote_count.desc`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&primary_release_year=2010&sort_by=vote_count.desc`,
   },
   {
     title: 'Best by Leonardo DiCaprio',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&page=1&with_cast=6194&with_people=6194&sort_by=vote_count.desc`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&page=1&with_cast=6194&with_people=6194&sort_by=vote_count.desc`,
   },
   {
     title: 'Sci-Fi',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=878&sort_by=vote_count.desc`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=878&sort_by=vote_count.desc`,
   },
   {
     title: 'Crime',
-    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=true&include_video=false&page=1&with_genres=80`,
+    apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&include_adult=false&include_video=false&page=1&with_genres=80`,
   },
 ];
 
