@@ -3,7 +3,7 @@ import styles from './page.scss';
 
 const categoryArray = [
   {
-    title: 'Treanding',
+    title: 'Trending',
     apiUrl: `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`,
   },
   {
