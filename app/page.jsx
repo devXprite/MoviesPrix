@@ -74,7 +74,7 @@ export default async function Home() {
           <div key={category.title}>
             <h2 className="categoryTitle">{category.title}</h2>
             <div className="cardContainer">
-              {await getCardsByCategory(category.apiUrl, (category.title === 'Treanding' ? 'wide' : 'normal'))}
+              {await getCardsByCategory(category.apiUrl, (category.title === 'Trending' ? 'wide' : 'normal'))}
             </div>
           </div>
         )))
