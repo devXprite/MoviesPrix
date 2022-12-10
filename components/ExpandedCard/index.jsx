@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import moment from 'moment';
 import ISO6391 from 'iso-639-1';
-import Image from 'next/image';
+// import Image from 'next/image';
 import styles from './expendedCard.scss';
 import StarRating from '../StarRating';
 
@@ -9,21 +10,21 @@ export default function ExpendedCard(props) {
     <div className="expendedCard">
 
       {props.backdrop_path ? (
-        <Image
+        <img
           className="backdrop"
           src={`https://image.tmdb.org/t/p/original/${props.backdrop_path}`}
           alt={props.title || props.name}
-          width={1600}
-          height={900}
+          // width={1600}
+          // height={900}
         />
       ) : ''}
 
       <div className="poster">
-        <Image
+        <img
           src={`https://image.tmdb.org/t/p/w400/${props.poster_path}`}
           alt={props.title}
-          width={300}
-          height={450}
+          // width={300}
+          // height={450}
         />
       </div>
       <div className="content">

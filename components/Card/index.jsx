@@ -4,7 +4,6 @@
 'use client';
 
 import ISO6391 from 'iso-639-1';
-import Image from 'next/image';
 import moment from 'moment';
 import Link from 'next/link';
 
@@ -46,17 +45,17 @@ export default function Card(prop) {
       </p>
 
       <Link href={`/${prop.type === 'tv' ? 'tv' : 'movies'}/${prop.id}`}>
-        <Image
+        <img
           className="image"
           src={
                     (prop.className === 'wide' && prop.backdrop_path)
-                      ? `https://image.tmdb.org/t/p/original${prop.backdrop_path}`
-                      : `https://image.tmdb.org/t/p/w300${prop.poster_path}`
+                      ? `https://image.tmdb.org/t/p/w500${prop.backdrop_path}`
+                      : `https://image.tmdb.org/t/p/w200${prop.poster_path}`
 
                 }
           alt={prop.title || prop.name}
-          width={prop.className === 'wide' ? 450 : 250}
-          height={350}
+          // width={prop.className === 'wide' ? 450 : 250}
+          // height={350}
         />
         <div className="info">
           <h2 className="title">{prop.title || prop.name}</h2>
