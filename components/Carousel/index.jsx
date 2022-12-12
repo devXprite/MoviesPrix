@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useEffect, useState } from 'react';
 
 export default function Carousel(props) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   const setDeviceType = () => (window.innerWidth < 900
     ? setIsMobile(true)
