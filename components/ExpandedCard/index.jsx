@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import moment from 'moment';
 import ISO6391 from 'iso-639-1';
-// import Image from 'next/image';
 import styles from './expendedCard.scss';
 import StarRating from '../StarRating';
 

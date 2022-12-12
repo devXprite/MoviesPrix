@@ -1,10 +1,13 @@
-// import { MdSentimentVeryDissatisfied } from 'react-icons/md';
-// import '../error.scss';
+import Trending from '../../components/Trending';
 
-import Loader from "../../components/Loader"
+export default async function Page() {
+  const res = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`);
+  const data = await res.json();
+  const movies = data.results;
 
-export default function page(prop) {
-    return (
-        <Loader />   
-    )
+  return (
+    <div>
+      <Trending movies={movies} />
+    </div>
+  );
 }
