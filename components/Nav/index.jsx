@@ -8,10 +8,8 @@ import {
   MdMovie, MdBookmarks, MdTv, MdSearch, MdHome,
 } from 'react-icons/md';
 
-import { RiMovie2Line } from 'react-icons/ri';
-
+import { RiMovie2Line, RiGithubFill } from 'react-icons/ri';
 import Link from 'next/link';
-
 import { usePathname } from 'next/navigation';
 import styles from './nav.scss';
 
@@ -52,7 +50,8 @@ export default function Nav() {
   return (
     <nav className="NavBar">
       <div className="logo">
-        <RiMovie2Line />
+        {/* <RiMovie2Line /> */}
+        <p>MoviesPrix</p>
       </div>
       <div className="linksContainer">
         {
@@ -62,10 +61,19 @@ export default function Nav() {
                         href={route.path}
                         className={route.pathRegex.test(usePathname()) ? 'active' : ''}
                       >
-                        {route.icon}
+                        <span className="link__icon">{route.icon}</span>
+                        <span className="link__title">{route.title}</span>
                       </Link>
                     ))
                 }
+
+        <a
+          href="https://github.com/"
+          className="source"
+        >
+          <span className="link__icon"><RiGithubFill /></span>
+          <span className="link__title">View Source</span>
+        </a>
       </div>
     </nav>
   );
