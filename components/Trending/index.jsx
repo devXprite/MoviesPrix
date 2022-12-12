@@ -8,12 +8,6 @@ import moment from 'moment';
 import StarRating from '../StarRating';
 import Carousel from '../Carousel';
 
-const minToHours = (mins) => {
-  const hours = Math.floor(mins / 60);
-  const minutes = mins % 60;
-  return `${hours}h ${minutes}m`;
-};
-
 const Trending = async ({ movies }) => (
 
   <div className="trending">
@@ -27,13 +21,7 @@ const Trending = async ({ movies }) => (
              </div>
              <div className="backdrop">
                <img
-                 className="landscape"
                  src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-                 alt={movie.title}
-               />
-               <img
-                 className="portrait"
-                 src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
                  alt={movie.title}
                />
              </div>
@@ -43,15 +31,10 @@ const Trending = async ({ movies }) => (
                  {moment(movie.release_date).format('MMMM YYYY')} | {ISO6391.getName(movie.original_language)}
                </p>
                <div className="rating">
-                 <StarRating rating={movie.vote_average} />
+                 <StarRating rating={movie.vote_average} starDimension={16} />
                  <span>({movie.vote_average.toFixed(1)})</span>
                </div>
                <p className="overview">{movie.overview}</p>
-               {/* <Link href={`/movie/${movie.id}`}>
-                            <button type="button" className="btn">
-                              <FaPlay /> &nbsp; Play Trailer
-                            </button>
-                          </Link> */}
              </div>
            </div>
          </Link>

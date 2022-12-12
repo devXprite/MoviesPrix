@@ -18,13 +18,16 @@ export default function Carousel(props) {
 
   return (
     <ReactCarousel
-    //   autoPlay
+      autoPlay
       infiniteLoop
-      centerMode
       emulateTouch
       autoFocus
       useKeyboardArrows
-      centerSlidePercentage={isMobile ? 90 : 75}
+      centerMode={!isMobile}
+      centerSlidePercentage={77}
+      swipeable
+      showStatus={false}
+      showIndicators={false}
     >
       {props.children}
     </ReactCarousel>

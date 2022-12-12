@@ -41,7 +41,8 @@
         }
 
         svg {
-            fill: gold;
+            // fill: gold;
+            fill: $primaryColor;
             margin-right: 0.25rem;
         }
     }
@@ -57,32 +58,6 @@
 
         svg {
             fill: $primaryColor;
-        }
-    }
-
-    &.wide {
-        width: 28rem;
-        height: 18rem;
-        scroll-snap-align: center;
-
-        .info {
-            .title {
-                font-size: 1.3rem;
-            }
-
-            .others {
-                font-size: 1.05rem;
-            }
-
-            .description {
-                font-size: 0.8rem;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                display: -webkit-box !important;
-                -webkit-line-clamp: 4;
-                -webkit-box-orient: vertical;
-                white-space: normal;
-            }
         }
     }
 
@@ -140,29 +115,6 @@
         .bookmark {
             font-size: 0.8rem;
         }
-
-        &.wide {
-            width: 95%;
-            height: auto;
-            min-height: 11rem;
-            aspect-ratio: 16/10;
-
-            .info {
-                .title {
-                    font-size: 1rem;
-                }
-
-                .others {
-                    font-size: 0.8rem;
-                }
-
-                .description {
-                    font-size: 0.7rem;
-                    -webkit-line-clamp: 3;
-                }
-            }
-        }
-
         .info {
             .title {
                 font-size: 0.85rem;
