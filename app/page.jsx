@@ -76,7 +76,7 @@ export default async function Home() {
       <Trending movies={trendingMoviesData.results} />
       {
         await Promise.all(categoryArray.map(async (category) => (
-          <div key={category.title}>
+          <div key={category.title} className="categoryContainer">
             <h2 className="categoryTitle">{category.title}</h2>
             <div className="cardContainer">
               {await getCardsByCategory(category.apiUrl)}

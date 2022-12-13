@@ -24,10 +24,12 @@ export default function Carousel(props) {
       autoFocus
       useKeyboardArrows
       centerMode={!isMobile}
-      centerSlidePercentage={77}
+      centerSlidePercentage={80}
       swipeable
       showStatus={false}
       showIndicators={false}
+      showArrows={false}
+      showThumbs={false}
     >
       {props.children}
     </ReactCarousel>

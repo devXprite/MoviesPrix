@@ -1,10 +1,18 @@
 @import './globals.scss';
 
-.categoryTitle {
-    font-weight: normal;
-    font-size: 1.5rem;
+.categoryContainer {
+    margin-left: 1rem;
 
     @media screen and (max-width:$mobile) {
-        font-size: 1.2rem;
+        margin-left:0rem;
     }
-  }
+
+    .categoryTitle {
+        font-weight: normal;
+        font-size: 1.5rem;
+
+        @media screen and (max-width:$mobile) {
+            font-size: 1.2rem;
+        }
+    }
+}

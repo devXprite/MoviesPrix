@@ -1,6 +1,7 @@
 @import "../../app/variables.scss";
 
 .trending {
+    margin-bottom: 2rem;
 
     &__movie {
         height: 60vh;
@@ -80,22 +81,13 @@
     li.slide {
         opacity: 0.5;
         transition: all 0.3s ease-in-out;
-        transform: scale(0.9);
 
         &.selected {
             opacity: 1;
-            transform: scale(1);
         }
     }
 
     @media screen and (max-width: 768px) {
-
-        .control-dots,
-        .control-arrow {
-            display: none;
-        }
-
-
         &__movie {
             margin: 0 0.25rem;
             height: unset;
