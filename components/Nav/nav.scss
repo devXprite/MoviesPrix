@@ -1,48 +1,79 @@
 @import "../../app/variables.scss";
 
 nav {
-    background-color: lighten($backgroundColor, 5%);
-    padding: 1rem;
+    background-color: darken($backgroundColor, 2.5%);
+    padding: 1rem 0.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: rgb(0 0 0 / 70%) 2px -2px 4px;
+    box-shadow: #000 2px -2px 4px;
     z-index: 2;
 
     .logo {
-        font-size: 2rem;
-        font-weight: bold;
+        text-align: center;
+        width: 100%;
+
+        p {
+            font-size: 1.8rem;
+            background: -webkit-linear-gradient(45deg, #21daa2, #005aff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     }
 
     .linksContainer {
         font-size: 1.8rem;
-        margin-top: 2rem;
-        height: 45%;
+        margin-top: 3rem;
+        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
         filter: drop-shadow(2px 2px 2px black);
         transition: all 0.3s ease-in-out;
 
-        a:hover svg {
-            transform: scale(1.05);
-            fill: rgb(180, 180, 180);
-        }
+        a {
+            font-size: 1.2rem;
+            padding: 0.25rem 0.75rem;
+            color: #c4c4c4;
+            border-left: 3px solid transparent;
+            display: flex;
+            margin-bottom: 1.75rem;
 
-        a.active {
-            svg {
+            &:last-child {
+                margin-top: auto;
+            }
+
+            .link__icon {
+                fill: $primaryColor;
+                font-size: 1.4rem;
+            }
+
+            .link__title {
+                padding-left: 0.75rem;
+            }
+
+            &:hover {
+                color: #e7e7e7;
+            }
+
+            &.active {
                 fill: $primaryColor;
                 transform: scale(1.05);
+                color: #fff;
+                border-left-color: $primaryColor;
+
+                .link__icon {
+                    color: $primaryColor;
+                }
             }
         }
     }
 
     @media screen and (max-width: $mobile) {
-            flex-direction: row;
-            // margin: 0.5rem;
-            // border-radius: 0.5rem;
+
+        flex-direction: row;
+        padding: 0;
 
         .logo {
             display: none;
@@ -52,6 +83,26 @@ nav {
             font-size: 1.4rem;
             flex-direction: row;
             margin-top: 0;
+            align-items: center;
+
+            a {
+                border: none;
+                margin-bottom: 0;
+                height: 95%;
+                align-items: center;
+
+                &:last-child {
+                    display: none;
+                }
+
+                &.active {
+                    border-bottom: 2px solid $primaryColor;
+                }
+
+                .link__title {
+                    display: none;
+                }
+            }
         }
     }
 }

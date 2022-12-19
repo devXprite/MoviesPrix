@@ -1,10 +1,7 @@
-// import { MdSentimentVeryDissatisfied } from 'react-icons/md';
-// import '../error.scss';
-
-import Loader from "../../components/Loader"
-
-export default function page(prop) {
-    return (
-        <Loader />   
-    )
+function test() {
+  return (
+    <h1>Hello World!</h1>
+  );
 }
+
+export default test;

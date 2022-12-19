@@ -11,19 +11,20 @@ export default function ScrollTopBtn() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const mainHeight = document.querySelector('main').pageYOffset;
     const handleScrollBtnVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (mainHeight > 50) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
-    window.addEventListener('scroll', handleScrollBtnVisibility);
+    document.querySelector('main').addEventListener('scroll', handleScrollBtnVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
+    document.querySelector('main').scrollTo({
       top: 0,
       behavior: 'smooth',
     });

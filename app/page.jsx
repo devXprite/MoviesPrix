@@ -1,11 +1,12 @@
 import Card from '../components/Card';
+import Trending from '../components/Trending';
 import styles from './page.scss';
 
 const categoryArray = [
-  {
-    title: 'Trending',
-    apiUrl: `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`,
-  },
+  // {
+  //   title: 'Trending',
+  //   apiUrl: `https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`,
+  // },
   {
     title: 'Popular',
     apiUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
@@ -57,24 +58,28 @@ const categoryArray = [
   },
 ];
 
-const getCardsByCategory = async (api, cardSize) => {
+const getCardsByCategory = async (api) => {
   const res = await fetch(api);
   const data = await res.json();
 
-  const cardComponents = data.results.map((movie, i) => <Card key={i} className={cardSize} {...movie} />);
+  const cardComponents = data.results.map((movie, i) => <Card key={i} {...movie} />);
 
   return cardComponents;
 };
 
 export default async function Home() {
+  const trendingMoviesRes = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.TMDB_API_KEY}`);
+  const trendingMoviesData = await trendingMoviesRes.json();
+
   return (
     <div>
+      <Trending movies={trendingMoviesData.results} />
       {
         await Promise.all(categoryArray.map(async (category) => (
-          <div key={category.title}>
+          <div key={category.title} className="categoryContainer">
             <h2 className="categoryTitle">{category.title}</h2>
             <div className="cardContainer">
-              {await getCardsByCategory(category.apiUrl, (category.title === 'Trending' ? 'wide' : 'normal'))}
+              {await getCardsByCategory(category.apiUrl)}
             </div>
           </div>
         )))

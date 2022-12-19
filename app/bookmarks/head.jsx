@@ -8,5 +8,5 @@ export default async function Head() {
     title: 'BookMarks',
     Noindex: true,
   };
-  return <NextSeo {...updateMeta} useAppDir={true} />;
+  return <NextSeo {...updateMeta} useAppDir />;
 }
