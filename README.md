@@ -51,7 +51,7 @@ This will start the development server and the website will be available at http
 
 <h2>ScreenShot</h2>
 <div align="center">
-    <img src="./public/screenshot.png" alt="MoviesPrix" width="400" />
+    <img src="./public/screenshot.png" alt="MoviesPrix" width="500" />
 </div>
 
 ## Contributions
