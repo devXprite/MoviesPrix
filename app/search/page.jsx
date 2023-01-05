@@ -1,70 +1,80 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-"use client";
 
-import { useEffect } from "react";
-import { useState } from "react";
-import Card from "../../components/Card";
-import styles from "./page.scss";
-import {ClipLoader} from 'react-spinners';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { ClipLoader } from 'react-spinners';
+import Card from '../../components/Card';
+import styles from './page.scss';
 
 export default function page() {
+  // create a state that will hold media type (movie or tv)
+  const [mediaType, setMediaType] = useState('movie');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [includeAdult, setIncludeAdult] = useState(true);
 
-    // create a state that will hold media type (movie or tv)
-    const [mediaType, setMediaType] = useState("movie");
-    const [searchQuery, setSearchQuery] = useState("");
-    const [includeAdult, setIncludeAdult] = useState(true);
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
 
-    useEffect(() => {
-        const controller = new AbortController();
-        const { signal } = controller;
+    (async () => {
+      setLoading(true);
+      const res = await fetch(`/api/search?q=${searchQuery}&mediaType=${mediaType}&includeAdult=${includeAdult}`, { signal });
+      const data = await res.json();
+      setResults(data.results);
+      setLoading(false);
+    })();
 
-        (async () => {
-            setLoading(true);
-            const res = await fetch(`/api/search?q=${searchQuery}&mediaType=${mediaType}&includeAdult=${includeAdult}`, { signal });
-            const data = await res.json();
-            setResults(data.results);
-            setLoading(false);
-        })();
+    return () => controller.abort();
+  }, [searchQuery, mediaType, includeAdult]);
 
-        return () => controller.abort();
-    }, [searchQuery, mediaType, includeAdult]);
+  return (
+    <div className="search__page">
+      <h2 className="pageTitle">Search</h2>
 
+      <div className="search">
+        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..." />
+        <select value={mediaType} onChange={(e) => setMediaType(e.target.value)} className="input__filter">
+          <option value="movie">Movie</option>
+          <option value="tv">TV Show</option>
+        </select>
+        <select value={includeAdult} onChange={(e) => setIncludeAdult(e.target.value)} className="input__filter">
+          <option value="true">Include Adult</option>
+          <option value="false">Exclude Adult</option>
+        </select>
+      </div>
+      {searchQuery && (
+        <p className="query">
+          search results for
+          {' '}
+          <b>{searchQuery}</b>
+          {' '}
+          in
+          {' '}
+          <b>{mediaType}</b>
+        </p>
+      )}
 
-    return (
-        <div className="search__page">
-            <h2 className="pageTitle">Search</h2>
-
-            <div className="search">
-                <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="input__query" placeholder="Search for a movie ..." />
-                <select value={mediaType} onChange={e => setMediaType(e.target.value)} className="input__filter">
-                    <option value="movie">Movie</option>
-                    <option value="tv">TV Show</option>
-                </select>
-                <select value={includeAdult} onChange={e => setIncludeAdult(e.target.value)} className="input__filter">
-                    <option value="true">Include Adult</option>
-                    <option value="false">Exclude Adult</option>
-                </select>
-            </div>
-            {searchQuery && <p className="query">search results for <b>{searchQuery}</b> in <b>{mediaType}</b></p>}
-
-            {
+      {
                 loading
-                    ? (
-                        <div className="loader">
-                            <ClipLoader />
+                  ? (
+                    <div className="loader">
+                      <ClipLoader />
+                    </div>
+                  )
+                  : (
+                    results
+                      ? (
+                        <div className="gridCardContainer">
+                          {results.map((result) => (<Card key={result.id} type={mediaType} {...result} />))}
                         </div>
-                    )
-                    : (
-                        results
-                            ? (<div className="gridCardContainer">
-                                {results.map(result => (<Card key={result.id} type={mediaType} {...result} />))}
-                            </div>)
-                            : <p className="no__result">no results</p>
-                    )
+                      )
+                      : <p className="no__result">no results</p>
+                  )
             }
-        </div>
-    )
+    </div>
+  );
 }

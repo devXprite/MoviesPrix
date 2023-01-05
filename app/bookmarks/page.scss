@@ -1,10 +1,4 @@
-@import "../globals.scss";
-
-.pageTitle {
-    font-weight: normal;
-    text-align: center;
-    margin: 1rem auto 2rem;
-}
+@import "../variables.scss";
 
 .noBookmark{
     color: $primaryColor;

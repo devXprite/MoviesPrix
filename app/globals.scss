@@ -9,8 +9,9 @@
   box-sizing: border-box;
 }
 
-html,body{
-  height:100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   color: $textColor;
   display: grid;
   grid-template-columns: 13rem auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,'Rubik', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Rubik', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
@@ -46,22 +47,24 @@ a {
   gap: 0.5rem;
 
   .card {
-      width: auto;
+    width: auto;
   }
 
   @media screen and (max-width: $mobile) {
-      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-      gap: 0;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    gap: 0;
 
-      .card{
-        height: 12rem;
-      }
+    .card {
+      height: 12rem;
+    }
   }
 }
 
 
-.pageTitle{
+.pageTitle {
   font-weight: normal;
+  text-align: center;
+  margin: 1rem auto 2rem;
 }
 
 @media screen and (max-width: $mobile) {
@@ -70,11 +73,11 @@ a {
     grid-template-rows: auto 3rem;
   }
 
-  main{
+  main {
     order: 1;
   }
 
-  nav{
+  nav {
     order: 2;
   }
 
