@@ -4,7 +4,8 @@ import Pagination from '../../components/Pagination';
 
 export default async function movies({ searchParams }) {
   const page = parseInt(searchParams.page) || 1;
-  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&sort_by=release_date.desc&primary_release_date.lte=${moment().format('YYYY-MM-DD')}&page=${page}`);
+
+  const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&sort_by=vote_count.desc&page=${page}`);
 
   const data = await response.json();
   const cardComponents = data.results.map((movie, i) => <Card key={i} className="normal" {...movie} />);
@@ -16,7 +17,7 @@ export default async function movies({ searchParams }) {
         {cardComponents}
       </div>
 
-      <Pagination pathname="/movies" currentPage={page} totalPage={data.total_pages} />
+      <Pagination pathname="/movies" currentPage={page} totalPage={500 || data.total_pages} />
     </>
   );
 }

@@ -5,7 +5,7 @@
     justify-content: space-around;
     margin: 3rem auto 2rem;
 
-    .paginationButton{
+    .paginationButton {
         background: $primaryColor;
         padding: 0.3rem 0.6rem;
         font-size: 1rem;
@@ -14,13 +14,49 @@
         box-shadow: 2px 2px 6px rgb(0 0 0 / 76%);
         cursor: pointer;
 
-        &:hover{
-            background: darken($primaryColor,10%)
+        &:hover {
+            background: darken($primaryColor, 10%);
         }
 
-        &:disabled{
+        &:disabled {
             opacity: 0.5;
             color: black;
+        }
+    }
+
+    .paginationNumber {
+        display: flex;
+        width: 100%;
+        max-width: 25rem;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        a {
+            font-size: 1rem;
+            // margin: 0rem 0.75rem;
+            color: $primaryColor;
+        }
+
+        .currentPage {
+            font-size: 1.1rem;
+            // margin: 1rem;
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        .paginationNumber{
+            // set all a elements to display: none except the .currentPage, .prevPage, and .nextPage
+            width: 8rem;
+            justify-content: space-evenly;
+            & > a:not(.prevPage):not(.nextPage)
+            {
+                display: none;
+            }
+            & > span:not(.currentPage){
+                display: none;
+            }
         }
     }
 }

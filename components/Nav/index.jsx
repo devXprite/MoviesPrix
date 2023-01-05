@@ -68,7 +68,7 @@ export default function Nav() {
                 }
 
         <a
-          href="https://github.com/"
+          href="https://github.com/devXprite/MoviesPrix"
           className="source"
         >
           <span className="link__icon"><RiGithubFill /></span>
