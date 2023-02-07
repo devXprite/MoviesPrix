@@ -2,6 +2,8 @@ import moment from 'moment';
 import Card from '../../components/Card';
 import Pagination from '../../components/Pagination';
 
+export const dynamic='force-dynamic';
+
 export default async function movies({ searchParams }) {
   const page = parseInt(searchParams.page) || 1;
 
