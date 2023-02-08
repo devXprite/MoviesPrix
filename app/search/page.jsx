@@ -3,7 +3,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ClipLoader } from 'react-spinners';
+import Loader from'../../components/Loader';
 import Card from '../../components/Card';
 import styles from './page.scss';
 
@@ -62,7 +62,7 @@ export default function page() {
                 loading
                   ? (
                     <div className="loader">
-                      <ClipLoader />
+                      <Loader />
                     </div>
                   )
                   : (
