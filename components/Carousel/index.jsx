@@ -30,6 +30,7 @@ export default function Carousel(props) {
       showIndicators={false}
       showArrows={false}
       showThumbs={false}
+      interval={2000}
     >
       {props.children}
     </ReactCarousel>
