@@ -1,7 +1,11 @@
 import Card from '../../components/Card';
 import Pagination from '../../components/Pagination';
 
-export const dynamic='force-dynamic';
+export const dynamic = 'force-dynamic';
+
+export const metadata = {
+  title: 'Explore TV'
+}
 
 export default async function page({ searchParams }) {
   const page = parseInt(searchParams.page) || 1;

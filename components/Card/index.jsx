@@ -1,6 +1,3 @@
-/* eslint-disable */
-/* eslint-disable @next/next/no-img-element */
-
 'use client';
 
 import ISO6391 from 'iso-639-1';
@@ -27,7 +24,6 @@ export default function Card(prop) {
       <p className="rating">
         <BsStarFill />
         {' '}
-        {/* only show 1 decimal place */}
         {prop.vote_average.toFixed(1)}
       </p>
       <p

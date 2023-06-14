@@ -1,14 +1,11 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 'use client';
 
 import { useEffect, useState } from 'react';
-import Loader from'../../components/Loader';
+import Loader from '../../components/Loader';
 import Card from '../../components/Card';
 import styles from './page.scss';
 
 export default function page() {
-  // create a state that will hold media type (movie or tv)
   const [mediaType, setMediaType] = useState('movie');
   const [searchQuery, setSearchQuery] = useState('');
   const [includeAdult, setIncludeAdult] = useState(true);
@@ -47,34 +44,21 @@ export default function page() {
         </select>
       </div>
       {searchQuery && (
-        <p className="query">
-          search results for
-          {' '}
-          <b>{searchQuery}</b>
-          {' '}
-          in
-          {' '}
-          <b>{mediaType}</b>
-        </p>
+        <p className="query">search results for <b>{searchQuery}</b> in <b>{mediaType}</b></p>
       )}
 
       {
-                loading
-                  ? (
-                    <div className="loader">
-                      <Loader />
-                    </div>
-                  )
-                  : (
-                    results
-                      ? (
-                        <div className="gridCardContainer">
-                          {results.map((result) => (<Card key={result.id} type={mediaType} {...result} />))}
-                        </div>
-                      )
-                      : <p className="no__result">no results</p>
-                  )
-            }
+        loading
+          ? (<div className="loader">
+            <Loader />
+          </div>)
+          : (results
+            ? (<div className="gridCardContainer">
+              {results.map((result) => (<Card key={result.id} type={mediaType} {...result} />))}
+            </div>)
+            : <p className="no__result">no results</p>
+          )
+      }
     </div>
   );
 }

@@ -4,16 +4,25 @@ import Script from 'next/script';
 import Nav from '../components/Nav';
 import ScrollTopBtn from '../components/ScrollTopBtn';
 
+export const metadata = {
+  title: {
+    template: '%s | MoviesPrix',
+    default: "MoviesPrix"
+  },
+  description: 'MoviesPrix is a movie website where you can find all the latest movies and tv shows',
+
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://moviesprix.vercel.app/',
+    site_name: 'MoviesPrix',
+  }
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="manifest.json" />
         <NextSeo
           useAppDir
           themeColor="#1c1c1c"

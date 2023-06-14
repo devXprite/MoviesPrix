@@ -2,6 +2,10 @@ import Card from '../components/Card';
 import Trending from '../components/Trending';
 import styles from './page.scss';
 
+export const metadata = {
+  title: "Home"
+}
+
 const categoryArray = [
   // {
   //   title: 'Trending',

@@ -4,6 +4,10 @@ import Pagination from '../../components/Pagination';
 
 export const dynamic='force-dynamic';
 
+export const metadata = {
+  title: 'Explore Movies'
+}
+
 export default async function movies({ searchParams }) {
   const page = parseInt(searchParams.page) || 1;
 
