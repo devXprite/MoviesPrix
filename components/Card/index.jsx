@@ -12,11 +12,16 @@ export default function Card(prop) {
   const [isBookmarked, setIsBookmarked] = useState(null);
 
   useEffect(() => {
-    if (localStorage.getItem(prop.id)) {
-      setIsBookmarked(true);
-    } else {
-      setIsBookmarked(false);
+    try {
+      if (window?.localStorage?.getItem(prop.id)) {
+        setIsBookmarked(true);
+      } else {
+        setIsBookmarked(false);
+      }
+    } catch (error) {
+      // console.log('Unable to access localStorage');
     }
+
   }, [prop.id]);
 
   return (
@@ -29,12 +34,17 @@ export default function Card(prop) {
       <p
         className="bookmark"
         onClick={() => {
-          setIsBookmarked(!isBookmarked);
-          if (isBookmarked) {
-            localStorage.removeItem(prop.id);
-          } else {
-            localStorage.setItem(prop.id, JSON.stringify(prop));
+          try {
+            if (isBookmarked) {
+              window?.localStorage.removeItem(prop.id);
+            } else {
+              window?.localStorage.setItem(prop.id, JSON.stringify(prop));
+            }
+            setIsBookmarked(!isBookmarked);
+          } catch (error) {
+            console.log('Unable to Bookmark this item because localStorage is not accessible');
           }
+
         }}
       >
         {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
@@ -44,14 +54,14 @@ export default function Card(prop) {
         <img
           className="image"
           src={
-                    (prop.className === 'wide' && prop.backdrop_path)
-                      ? `https://image.tmdb.org/t/p/w500${prop.backdrop_path}`
-                      : `https://image.tmdb.org/t/p/w200${prop.poster_path}`
+            (prop.className === 'wide' && prop.backdrop_path)
+              ? `https://image.tmdb.org/t/p/w500${prop.backdrop_path}`
+              : `https://image.tmdb.org/t/p/w200${prop.poster_path}`
 
-                }
+          }
           alt={prop.title || prop.name}
-          // width={prop.className === 'wide' ? 450 : 250}
-          // height={350}
+        // width={prop.className === 'wide' ? 450 : 250}
+        // height={350}
         />
         <div className="info">
           <h2 className="title">{prop.title || prop.name}</h2>

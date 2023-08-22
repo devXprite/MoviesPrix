@@ -10,22 +10,35 @@ export default function Bookmarks() {
     const [localStorageData, setLocalStorageData] = useState(null);
 
     useEffect(() => {
-        const data = localStorage;
-        setLocalStorageData(data);
+        try {
+            const data = window?.localStorage;
+            setLocalStorageData(data);
+        } catch (error) {
+            console.log('Unable to access localStorage');
+            setLocalStorageData(false);
+        }
     }, []);
 
+    if (localStorageData === false) {
+        return (
+            <div>
+                <h2 className='pageTitle'>Bookmarks</h2>
+                <div className="gridCardContainer">
+                    <p className="noBookmark">Unable to access localStorage</p>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>
             <h2 className='pageTitle'>Bookmarks</h2>
             <div className="gridCardContainer">
-                {
-                    localStorageData 
-                    ? Object.keys(localStorageData).filter(key => !isNaN(key)).length == 0 
+                {localStorageData
+                    ? Object.keys(localStorageData).filter(key => !isNaN(key)).length == 0
                         ? <p className="noBookmark">No Bookmark Yet!</p>
                         : Object.keys(localStorageData).filter(key => !isNaN(key)).map((key, index) => <Card key={index} {...JSON.parse(localStorageData[key])} />)
-                    : <Loader />
-                }
+                    : <Loader />}
             </div>
         </div>
     )
