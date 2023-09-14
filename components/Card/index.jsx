@@ -35,12 +35,12 @@ export default function Card(prop) {
         className="bookmark"
         onClick={() => {
           try {
+            setIsBookmarked(!isBookmarked);
             if (isBookmarked) {
               window?.localStorage.removeItem(prop.id);
             } else {
               window?.localStorage.setItem(prop.id, JSON.stringify(prop));
             }
-            setIsBookmarked(!isBookmarked);
           } catch (error) {
             console.log('Unable to Bookmark this item because localStorage is not accessible');
           }

@@ -55,6 +55,12 @@
         padding: 0.3rem 0.3rem 0.1rem 0.3rem;
         border-radius: 0.3rem;
         font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover{
+            transform: scale(1.25);
+        }
 
         svg {
             fill: $primaryColor;
