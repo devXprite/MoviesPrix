@@ -6,7 +6,11 @@ import Link from 'next/link';
 
 import { BsStarFill, BsBookmark, BsBookmarkFill } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import styles from './card.scss';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 export default function Card(prop) {
   const [isBookmarked, setIsBookmarked] = useState(null);
@@ -51,14 +55,20 @@ export default function Card(prop) {
       </p>
 
       <Link href={`/${prop.type === 'tv' ? 'tv' : 'movies'}/${prop.id}`}>
-        <img
+        <LazyLoadImage
           className="image"
           src={
             (prop.className === 'wide' && prop.backdrop_path)
-              ? `https://image.tmdb.org/t/p/w500${prop.backdrop_path}`
+              ? `https://image.tmdb.org/t/p/w780${prop.backdrop_path}`
               : `https://image.tmdb.org/t/p/w200${prop.poster_path}`
 
           }
+          placeholderSrc={
+            (prop.className === 'wide' && prop.backdrop_path) 
+            ? `https://image.tmdb.org/t/p/w300${prop.backdrop_path}`
+              : `https://image.tmdb.org/t/p/w45${prop.poster_path}`
+          }
+          effect="blur"
           alt={prop.title || prop.name}
         // width={prop.className === 'wide' ? 450 : 250}
         // height={350}
