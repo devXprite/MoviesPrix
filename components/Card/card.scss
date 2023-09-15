@@ -58,6 +58,7 @@
         font-size: 1.1rem;
         cursor: pointer;
         transition: all 0.3s;
+        z-index: 5;
 
         &:hover{
             transform: scale(1.25);

@@ -28,7 +28,7 @@ const Trending = async ({ movies }) => (
                /> */}
                <Image
                   src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
-                  placeholderSrc={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                  placeholderSrc={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}`}
                   alt={movie.title}
                 />
              </div>
