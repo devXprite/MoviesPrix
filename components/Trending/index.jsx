@@ -7,6 +7,8 @@ import ISO6391 from 'iso-639-1';
 import moment from 'moment';
 import StarRating from '../StarRating';
 import Carousel from '../Carousel';
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+import Image from '../Image';
 
 const Trending = async ({ movies }) => (
 
@@ -20,10 +22,15 @@ const Trending = async ({ movies }) => (
                <FaPlay />
              </div>
              <div className="backdrop">
-               <img
-                 src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+               {/* <img
+                 src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
                  alt={movie.title}
-               />
+               /> */}
+               <Image
+                  src={`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`}
+                  placeholderSrc={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                  alt={movie.title}
+                />
              </div>
              <div className="info">
                <h2 className="title">{movie.title}</h2>

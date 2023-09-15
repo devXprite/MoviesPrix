@@ -40,6 +40,11 @@
         .backdrop {
             height: 100%;
 
+            &>.lazy-load-image-background {
+                width: 100%;
+                height: 100%;
+            }
+
             img {
                 height: 100%;
             }

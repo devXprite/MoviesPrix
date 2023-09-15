@@ -8,8 +8,8 @@ import { BsStarFill, BsBookmark, BsBookmarkFill } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import styles from './card.scss';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import styles from './card.scss';
 
 
 export default function Card(prop) {
