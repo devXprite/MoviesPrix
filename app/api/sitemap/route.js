@@ -38,7 +38,7 @@ const genrateSitemap = async (count) => {
 
 
 export async function GET(req) {
-    const sitemap = await genrateSitemap(100);
+    const sitemap = await genrateSitemap(10);
 
     return new Response(
         sitemap,
