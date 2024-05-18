@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from 'next/server';
+import tmdbClient from '../../../lib/tmdbClient';
 
 export async function GET(req) {
     const { searchParams } = new URL(req.url);
@@ -7,9 +8,7 @@ export async function GET(req) {
     const mediaType = searchParams.get('mediaType');
     const includeAdult = searchParams.get('includeAdult');
 
-    const url = `https://api.themoviedb.org/3/search/${mediaType}?api_key=${process.env.TMDB_API_KEY}&query=${q}&include_adult=${includeAdult}`;
-    const response = await fetch(url);
-    const data = await response.json();
+    const { data } = await tmdbClient.get(`/search/${mediaType}?query=${q}&include_adult=${includeAdult}`);
 
     return NextResponse.json(data);
 }

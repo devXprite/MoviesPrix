@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.3",
+    "axios": "^1.6.8",
     "iso-639-1": "^2.1.15",
     "moment": "^2.29.4",
-    "next": "^13.4.5",
+    "next": "^14.2.1",
     "next-seo": "^5.14.1",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
