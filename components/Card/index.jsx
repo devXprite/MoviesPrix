@@ -54,7 +54,7 @@ export default function Card(prop) {
         {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
       </p>
 
-      <Link href={`/${prop.type === 'tv' ? 'tv' : 'movies'}/${prop.id}`}>
+      <Link prefetch={false} href={`/${prop.type === 'tv' ? 'tv' : 'movies'}/${prop.id}`}>
         <LazyLoadImage
           className="image"
           src={

@@ -16,7 +16,7 @@ const Trending = async ({ movies }) => (
     <Carousel>
       {
        movies.map((movie, i) => (
-         <Link key={i} href={`/movies/${movie.id}`}>
+         <Link prefetch={false} key={i} href={`/movies/${movie.id}`}>
            <div className="trending__movie">
              <div className="playIcon">
                <FaPlay />
